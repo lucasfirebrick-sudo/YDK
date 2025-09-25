@@ -1,0 +1,519 @@
+/* ========== 可爱温馨Footer设计 - 朋友式获客 ========== */
+
+/* Footer主容器 - 高优先级确保生效 */
+.footer {
+    background: #2c3e50 !important;
+    color: #ffffff !important;
+    padding: 3rem 0 1rem !important;
+    margin-top: 3rem !important;
+    position: relative !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.footer .container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 2rem !important;
+}
+
+/* 主要内容区域 - 3列布局 - 强制优先级 */
+.footer-main {
+    display: grid !important;
+    grid-template-columns: 2fr 1.5fr 1.2fr !important;
+    gap: 3rem !important;
+    margin-bottom: 2rem !important;
+    align-items: flex-start !important;
+}
+
+/* Footer section基础样式 */
+.footer-section {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 品牌故事区域 - 可爱温馨 */
+.footer-section.footer-brand {
+    padding-right: 1rem;
+}
+
+.footer-section.footer-brand .company-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.footer-section.footer-brand .company-tagline {
+    font-size: 1rem;
+    color: #f39c12;
+    margin-bottom: 1rem;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.footer-section.footer-brand .company-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #bdc3c7;
+    margin-bottom: 0;
+}
+
+/* 邮箱朋友圈区域 - 核心功能 - 强制优先级 */
+.footer-section.footer-newsletter {
+    background: rgba(255, 255, 255, 0.05) !important;
+    padding: 1.5rem !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.footer-section.footer-newsletter::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #f39c12, #e67e22);
+    border-radius: 12px 12px 0 0;
+}
+
+.footer-newsletter h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-newsletter h4::before {
+    content: '✨';
+    font-size: 1rem;
+}
+
+.footer-newsletter .newsletter-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #bdc3c7;
+    margin-bottom: 1.2rem;
+}
+
+.footer-newsletter .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-newsletter .email-input {
+    padding: 0.8rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.footer-newsletter .email-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-newsletter .email-input:focus {
+    outline: none;
+    border-color: #f39c12;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 2px rgba(243, 156, 18, 0.2);
+}
+
+.footer-newsletter .subscribe-btn {
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-newsletter .subscribe-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(243, 156, 18, 0.3);
+}
+
+.footer-newsletter .subscribe-btn:active {
+    transform: translateY(0);
+}
+
+.footer-newsletter .privacy-note {
+    font-size: 0.75rem;
+    color: #95a5a6;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.footer-newsletter .privacy-note::before {
+    content: '🔒';
+    font-size: 0.8rem;
+}
+
+/* 联系我们区域 - 亲切温暖 */
+.footer-section.footer-contact h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-section.footer-contact h4::before {
+    content: '👋';
+    font-size: 1rem;
+}
+
+.footer-contact .contact-intro {
+    font-size: 0.9rem;
+    color: #f39c12;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.footer-contact .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-contact .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 0.3rem 0;
+    line-height: 1.4;
+}
+
+.footer-contact .contact-icon {
+    width: 16px;
+    height: 16px;
+    color: #f39c12;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.footer-contact .contact-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.footer-contact .contact-main {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.footer-contact .contact-note {
+    color: #bdc3c7;
+    font-size: 0.75rem;
+    font-style: italic;
+}
+
+.footer-contact .work-hours {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.8rem;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: #bdc3c7;
+    border-left: 3px solid #f39c12;
+}
+
+/* Footer底部区域 */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* 社交媒体链接 - 可爱圆润 */
+.footer-social .social-links {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.footer-social .social-intro {
+    font-size: 0.8rem;
+    color: #bdc3c7;
+    margin-right: 0.5rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-link:hover {
+    background: #f39c12;
+    color: #ffffff;
+    transform: translateY(-3px) scale(1.1);
+    border-color: #f39c12;
+    box-shadow: 0 4px 12px rgba(243, 156, 18, 0.3);
+}
+
+.social-link.whatsapp:hover {
+    background: #25d366;
+    border-color: #25d366;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.social-link.email:hover {
+    background: #3498db;
+    border-color: #3498db;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.social-link.phone:hover {
+    background: #27ae60;
+    border-color: #27ae60;
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+}
+
+/* 版权信息 - 温暖表达 */
+.footer-copyright {
+    font-size: 0.85rem;
+    color: #95a5a6;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.footer-copyright .copyright-main {
+    color: #bdc3c7;
+}
+
+.footer-copyright .copyright-slogan {
+    color: #f39c12;
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+.footer-copyright a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-copyright a:hover {
+    color: #f39c12;
+}
+
+/* ========== 响应式设计 ========== */
+
+/* 大屏优化 */
+@media (min-width: 1440px) {
+    .footer .container {
+        max-width: 1400px;
+    }
+
+    .footer-main {
+        gap: 4rem;
+    }
+}
+
+/* 平板适配 */
+@media (max-width: 1024px) {
+    .footer {
+        padding: 2.5rem 0 1rem;
+    }
+
+    .footer-main {
+        grid-template-columns: 1.8fr 1.5fr 1.2fr;
+        gap: 2rem;
+    }
+
+    .footer-section.footer-brand {
+        padding-right: 0.5rem;
+    }
+}
+
+/* 小平板适配 */
+@media (max-width: 768px) {
+    .footer {
+        padding: 2rem 0 1rem;
+    }
+
+    .footer .container {
+        padding: 0 1rem;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-section.footer-brand {
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .footer-section.footer-newsletter,
+    .footer-section.footer-contact {
+        text-align: center;
+    }
+
+    .footer-contact .contact-item {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        padding: 1.2rem 0;
+    }
+
+    .footer-social .social-intro {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+}
+
+/* 手机适配 */
+@media (max-width: 480px) {
+    .footer {
+        padding: 1.5rem 0 0.8rem;
+        margin-top: 2rem;
+    }
+
+    .footer-section.footer-brand .company-name {
+        font-size: 1.2rem;
+    }
+
+    .footer-section.footer-brand .company-tagline {
+        font-size: 0.9rem;
+    }
+
+    .footer-section.footer-brand .company-description {
+        font-size: 0.85rem;
+    }
+
+    .footer-newsletter h4,
+    .footer-contact h4 {
+        font-size: 1rem;
+    }
+
+    .footer-newsletter {
+        padding: 1.2rem;
+    }
+
+    .footer-newsletter .newsletter-description {
+        font-size: 0.85rem;
+    }
+
+    .social-link {
+        width: 34px;
+        height: 34px;
+        font-size: 0.9rem;
+    }
+
+    .footer-copyright {
+        font-size: 0.8rem;
+    }
+}
+
+/* 超小屏幕适配 */
+@media (max-width: 320px) {
+    .footer {
+        padding: 1.2rem 0 0.6rem;
+    }
+
+    .footer-section.footer-brand .company-name {
+        font-size: 1.1rem;
+    }
+
+    .footer-newsletter {
+        padding: 1rem;
+    }
+
+    .social-link {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+}
+
+/* 打印样式 */
+@media print {
+    .footer {
+        background: white !important;
+        color: black !important;
+        padding: 1rem 0;
+    }
+
+    .footer-section.footer-brand .company-name,
+    .footer-section h4 {
+        color: black !important;
+    }
+
+    .footer-section.footer-brand .company-description,
+    .footer-contact .contact-main,
+    .footer-copyright {
+        color: black !important;
+    }
+
+    .footer-newsletter,
+    .footer-social {
+        display: none !important;
+    }
+}
+
+/* 邮箱订阅成功提示动画 */
+@keyframes subscribeSuccess {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.footer-newsletter.success {
+    animation: subscribeSuccess 0.5s ease;
+}
+
+.footer-newsletter.success .subscribe-btn {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+}
+
+.footer-newsletter.success .subscribe-btn::after {
+    content: ' ✓';
+}

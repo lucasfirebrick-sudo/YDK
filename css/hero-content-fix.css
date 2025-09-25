@@ -1,0 +1,81 @@
+/* Hero Content Background Optimization - 优化Hero文字背景底板 */
+
+.hero-content {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+
+  /* 优化尺寸 - 使背景刚好比文字和按钮大一圈 */
+  max-width: 420px;
+  width: 28%;
+  min-width: 300px;
+
+  /* 优化内边距 - 给文字和按钮留出合适的空间 */
+  padding: 1.2rem 1.5rem 1.4rem 1.5rem;
+
+  color: white;
+  text-align: center;
+
+  /* 更美观的背景渐变 */
+  background: linear-gradient(135deg,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.45) 50%,
+    rgba(0, 0, 0, 0.35) 100%);
+
+  /* 优化圆角 */
+  border-radius: 12px;
+
+  /* 增强毛玻璃效果 */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  /* 更精致的边框 */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  /* 优化阴影效果 */
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.25),
+    0 2px 8px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+  .hero-content {
+    width: 85%;
+    max-width: 340px;
+    min-width: 280px;
+    padding: 1rem 1.2rem 1.1rem 1.2rem;
+    bottom: 10%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    width: 90%;
+    max-width: 300px;
+    padding: 0.8rem 1rem 0.9rem 1rem;
+    bottom: 8%;
+    border-radius: 8px;
+  }
+}
+
+/* 确保内容元素有足够的间距 */
+.hero-content h1,
+.hero-content h2 {
+  margin-bottom: 0.8rem !important;
+}
+
+.hero-content p {
+  margin-bottom: 1.2rem !important;
+}
+
+.hero-content .hero-actions {
+  margin-top: 1rem;
+}
+
+.hero-content .hero-actions .btn {
+  margin: 0 0.4rem;
+}

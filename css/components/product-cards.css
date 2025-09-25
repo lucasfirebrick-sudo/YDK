@@ -1,0 +1,351 @@
+/* ========== 产品卡片组件样式 ========== */
+/* 从style.css中提取的所有产品相关样式 */
+
+/* ========== 产品展示区域样式 ========== */
+.products-section {
+    background: #f9f9f9;
+    padding: 2rem 0;
+    min-height: 400px;
+}
+
+/* 产品网格布局 */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+/* ========== 产品卡片基础样式 ========== */
+.product-card {
+    background: var(--bg-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    border: 1px solid var(--border-color);
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    border-color: rgba(197, 55, 55, 0.3);
+}
+
+/* 产品图片样式 */
+.product-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    background: var(--bg-light);
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-card:hover .product-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(197, 55, 55, 0.1);
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* 产品信息样式 */
+.product-body {
+    padding: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.product-title {
+    font-size: 1.2rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+    margin-bottom: 0.8rem;
+    transition: color 0.3s ease;
+}
+
+.product-card:hover .product-title {
+    color: var(--primary-color);
+}
+
+.title-cn {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+    transition: color 0.3s ease;
+}
+
+.title-en {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 0.8rem;
+    transition: color 0.3s ease;
+}
+
+.product-card:hover .title-cn {
+    color: var(--primary-color);
+}
+
+.product-card:hover .title-en {
+    color: var(--primary-dark);
+}
+
+/* 产品描述 */
+.product-description {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+/* 产品标签 */
+.product-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: var(--font-weight-medium);
+    z-index: 3;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-badge {
+    transform: scale(1.05);
+}
+
+/* 产品动作按钮 */
+.product-actions {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.product-actions .btn {
+    flex: 1;
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    font-weight: var(--font-weight-medium);
+    transition: all 0.3s ease;
+}
+
+.btn-inquiry {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.btn-inquiry:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-details {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-details:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* ========== 产品卡片交互状态 ========== */
+.product-card:active {
+    transform: scale(0.995);
+}
+
+.product-card:focus-within {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* 产品卡片动画 */
+.product-card:nth-child(1) { animation-delay: 0.1s; }
+.product-card:nth-child(2) { animation-delay: 0.2s; }
+.product-card:nth-child(3) { animation-delay: 0.3s; }
+.product-card:nth-child(4) { animation-delay: 0.4s; }
+.product-card:nth-child(5) { animation-delay: 0.5s; }
+.product-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* 产品卡片淡入淡出效果 */
+.product-card.fade-out {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.product-card.fade-in {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* 产品比较选中状态 */
+.product-card.selected-for-compare {
+    box-shadow: 0 8px 30px rgba(197, 55, 55, 0.2);
+    border: 2px solid var(--primary-color);
+}
+
+/* ========== 响应式设计 ========== */
+@media (max-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+
+    .product-body {
+        padding: 1.2rem;
+    }
+
+    .product-actions {
+        flex-direction: column;
+    }
+
+    .product-actions .btn {
+        margin: 0.3rem 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .products-section {
+        padding: 1rem 0;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0.5rem 0;
+    }
+
+    .product-image {
+        height: 180px;
+    }
+}
+
+/* ========== 产品展示侧边栏 ========== */
+.product-showcase-sidebar {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 280px;
+    background: var(--bg-white);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+@media (max-width: 1024px) {
+    .product-showcase-sidebar {
+        display: none;
+    }
+}
+
+/* 相关产品卡片 */
+.related-product-card {
+    background: var(--bg-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.related-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.related-product-image {
+    height: 120px;
+    overflow: hidden;
+}
+
+.related-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.related-product-card:hover .related-product-image img {
+    transform: scale(1.05);
+}
+
+/* ========== 图片叠加按钮 ========== */
+.image-overlay-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--primary-color);
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 25px;
+    font-weight: var(--font-weight-medium);
+    opacity: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    z-index: 15;
+}
+
+.product-card:hover .image-overlay-btn {
+    opacity: 1;
+}
+
+.image-overlay-btn:hover {
+    background: white;
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* 产品图片前景遮罩 */
+.product-card .product-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(197, 55, 55, 0.1), rgba(255, 107, 53, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.product-card:hover .product-image::before {
+    opacity: 1;
+}

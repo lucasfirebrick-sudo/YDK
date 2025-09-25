@@ -1,0 +1,474 @@
+/* ========== 应用详情页模板样式 - 适用于26个应用页面 ========== */
+
+/* ========== APPLICATION DETAIL HEADER ========== */
+.application-detail-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    padding: var(--spacing-2xl) 0;
+}
+
+.application-detail-title {
+    color: white;
+    margin-bottom: var(--spacing-sm);
+    font-size: 2.5rem;
+}
+
+.application-detail-category {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.application-detail-rating {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.rating-stars {
+    color: #ffc107;
+}
+
+/* ========== APPLICATION DETAIL CONTENT ========== */
+.application-detail-content {
+    padding: var(--section-padding) 0;
+}
+
+.application-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.application-images {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.application-main-image {
+    width: 100%;
+    height: 400px;
+    background: var(--background-light);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.application-main-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.application-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-sm);
+}
+
+.application-thumbnail {
+    height: 80px;
+    background: var(--background-light);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.application-thumbnail:hover,
+.application-thumbnail.active {
+    border: 2px solid var(--primary-color);
+}
+
+.application-thumbnail img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* ========== APPLICATION INFO ========== */
+.application-info h2 {
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+    font-size: 2rem;
+}
+
+.application-description {
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.1rem;
+}
+
+.application-advantages {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.advantages-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.advantages-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.advantages-list li {
+    display: flex;
+    align-items: flex-start;
+    color: var(--text-dark);
+    padding: var(--spacing-sm);
+    background: var(--background-light);
+    border-radius: var(--radius-md);
+}
+
+.advantages-list li::before {
+    content: '✓';
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-right: var(--spacing-sm);
+    margin-top: 2px;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+/* ========== USE CASES ========== */
+.use-cases {
+    background: var(--background-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.use-cases-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.use-case-item {
+    background: white;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--primary-color);
+}
+
+.use-case-title {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-xs);
+}
+
+.use-case-description {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* ========== TECHNICAL SPECIFICATIONS ========== */
+.technical-specs {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.specs-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.specs-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.specs-table th,
+.specs-table td {
+    padding: var(--spacing-sm) var(--spacing-md);
+    text-align: left;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.specs-table th {
+    background: var(--background-light);
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.specs-table td {
+    color: var(--text-light);
+}
+
+.specs-table tr:last-child th,
+.specs-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* ========== APPLICATION PROCESS ========== */
+.application-process {
+    background: var(--background-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.process-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    position: relative;
+}
+
+.process-step {
+    background: white;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    text-align: center;
+    position: relative;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-sm);
+    font-weight: 600;
+}
+
+.step-title {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-xs);
+}
+
+.step-description {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* ========== APPLICATION ACTIONS ========== */
+.application-actions {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+.actions-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.action-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.action-btn {
+    padding: 15px 20px;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+}
+
+.action-btn-primary {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.action-btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.action-btn-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.action-btn-secondary:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* ========== RELATED APPLICATIONS ========== */
+.related-applications {
+    padding: var(--section-padding) 0;
+    background: var(--background-light);
+}
+
+.related-applications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Medium screens */
+@media (max-width: 1024px) {
+    .application-detail-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .application-images {
+        order: -1;
+    }
+
+    .advantages-list {
+        grid-template-columns: 1fr;
+    }
+
+    .use-cases-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .application-detail-title {
+        font-size: 2rem;
+    }
+
+    .application-info h2 {
+        font-size: 1.7rem;
+    }
+
+    .application-main-image {
+        height: 300px;
+    }
+
+    .application-thumbnails {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .action-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .specs-table th,
+    .specs-table td {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.9rem;
+    }
+
+    .process-steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .application-detail-header {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .application-detail-title {
+        font-size: 1.8rem;
+    }
+
+    .application-advantages,
+    .use-cases,
+    .technical-specs,
+    .application-process,
+    .application-actions {
+        padding: var(--spacing-md);
+    }
+
+    .application-thumbnails {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .specs-table {
+        font-size: 0.8rem;
+    }
+
+    .related-applications-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========== PRINT STYLES ========== */
+@media print {
+    .application-detail-header {
+        background: white !important;
+        color: black !important;
+    }
+
+    .application-detail-title,
+    .application-detail-category {
+        color: black !important;
+    }
+
+    .application-thumbnails,
+    .action-buttons {
+        display: none !important;
+    }
+
+    .application-detail-grid {
+        grid-template-columns: 1fr !important;
+    }
+}

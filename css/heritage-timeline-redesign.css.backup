@@ -1,0 +1,246 @@
+/* Heritage Timeline Redesign - 简化稳定版本 */
+
+.heritage-timeline {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.heritage-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="heritage-pattern" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23c53737" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23heritage-pattern)"/></svg>');
+    pointer-events: none;
+}
+
+.timeline-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.heritage-timeline h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #fff, #c53737);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.heritage-timeline .section-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, transparent 0%, #c53737 10%, #c53737 90%, transparent 100%);
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.timeline-item.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    text-align: center;
+}
+
+.timeline-year {
+    background: linear-gradient(135deg, #c53737, #e74c3c);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 4px 15px rgba(197, 55, 55, 0.4);
+}
+
+.timeline-dot {
+    width: 16px; height: 16px;
+    background: white;
+    border: 4px solid #c53737;
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(197, 55, 55, 0.3);
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 45%;
+}
+
+.timeline-item:nth-child(1) .timeline-content {
+    margin-right: 55%; margin-left: 0;
+    border-right: 4px solid #c53737;
+    text-align: right;
+}
+
+.timeline-item:nth-child(2) .timeline-content {
+    margin-left: 55%; margin-right: 0;
+    border-left: 4px solid #c53737;
+    text-align: left;
+}
+
+.timeline-item:nth-child(3) .timeline-content {
+    margin-right: 55%; margin-left: 0;
+    border-right: 4px solid #c53737;
+    text-align: right;
+}
+
+.generation-info {
+    margin-bottom: 1rem;
+}
+
+.generation-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.generation-subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.timeline-description p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.timeline-description blockquote {
+    background: #f8f9fa;
+    border-left: 4px solid #c53737;
+    padding: 1rem;
+    margin: 1rem 0;
+    font-style: italic;
+    color: #666;
+    border-radius: 0 8px 8px 0;
+}
+
+.modern-features {
+    display: grid;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.modern-features .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #f8f9fa;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border-left: 3px solid #c53737;
+}
+
+.modern-features .feature-item i {
+    color: #c53737;
+    font-size: 1.1rem;
+}
+
+.modern-features .feature-item span {
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.heritage-conclusion {
+    text-align: center;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.conclusion-text {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .heritage-timeline {
+        padding: 2rem 0;
+    }
+
+    .heritage-timeline h3 {
+        font-size: 1.8rem;
+    }
+
+    .timeline-container {
+        padding: 0 1rem;
+    }
+
+    .timeline-container::before {
+        left: 20px;
+        transform: none;
+    }
+
+    .timeline-marker {
+        left: 20px;
+        transform: none;
+    }
+
+    .timeline-content {
+        margin-left: 60px !important;
+        margin-right: 0 !important;
+        width: calc(100% - 60px) !important;
+        padding: 1rem;
+        text-align: left !important;
+        border-left: 4px solid #c53737 !important;
+        border-right: none !important;
+    }
+}

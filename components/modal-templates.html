@@ -1,0 +1,199 @@
+<!-- ================================================
+     通用模态框HTML模板 - 全站可复用组件
+     使用方法：在需要的页面中包含此文件
+     ================================================ -->
+
+<!-- 快速询价 Modal -->
+<div id="quick-inquiry-modal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>快速询价</h2>
+            <p class="modal-subtitle">描述您的需求，我们将快速为您报价</p>
+            <button type="button" class="panel-close" onclick="closeQuickInquiry()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="quick-inquiry-form">
+                <div class="form-group">
+                    <label>需求描述：</label>
+                    <textarea name="description" rows="4" placeholder="请详细描述您的需求，包括产品类型、使用温度、应用场景等信息。支持任何语言输入。"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>联系邮箱：<span style="color: red;">*</span></label>
+                    <input type="email" name="email" placeholder="请输入您的邮箱地址" required>
+                </div>
+                <div class="form-group">
+                    <label>联系电话：</label>
+                    <input type="tel" name="phone" placeholder="请输入您的电话号码（可选）">
+                </div>
+                <div class="form-group">
+                    <label>公司名称：</label>
+                    <input type="text" name="company" placeholder="请输入您的公司名称（可选）">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">提交询价</button>
+                    <button type="button" class="btn btn-outline" onclick="closeQuickInquiry()">取消</button>
+                </div>
+            </form>
+
+            <!-- 成功消息 -->
+            <div id="quick-inquiry-success" class="success-message" style="display: none;">
+                <div class="success-icon">✅</div>
+                <h3>询价提交成功！</h3>
+                <p>我们已收到您的询价需求，将在24小时内回复您详细的报价信息。</p>
+                <button type="button" class="btn btn-primary" onclick="closeQuickInquiry()">知道了</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 获取报价 Modal -->
+<div id="get-quote-modal" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>获取报价</h2>
+            <p class="modal-subtitle">为您提供详细的产品报价和技术支持</p>
+            <button type="button" class="panel-close" onclick="closeGetQuote()">&times;</button>
+        </div>
+
+        <!-- 步骤指示器 -->
+        <div class="step-indicator">
+            <div class="step active" data-step="1">
+                <div class="step-number">1</div>
+                <div class="step-label">产品需求</div>
+            </div>
+            <div class="step" data-step="2">
+                <div class="step-number">2</div>
+                <div class="step-label">联系信息</div>
+            </div>
+        </div>
+
+        <div class="modal-body">
+            <form id="get-quote-form">
+                <!-- 第一步：产品信息和需求 -->
+                <div class="form-step active" data-step="1">
+                    <!-- 产品信息预览 -->
+                    <div id="quote-product-preview" class="quote-product-info-enhanced">
+                        <div class="product-image-container">
+                            <img id="quote-product-image" src="" alt="产品图片" class="product-image">
+                            <div id="quote-product-badge" class="product-badge"></div>
+                        </div>
+                        <div class="product-details">
+                            <h3 id="quote-product-name">产品名称</h3>
+                            <p id="quote-product-english" class="product-english-name">English Name</p>
+                            <div class="product-specs-grid">
+                                <div id="quote-product-specs" class="specs-container"></div>
+                            </div>
+                            <div class="product-applications">
+                                <strong>主要应用：</strong>
+                                <span id="quote-product-applications">应用领域</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 采购需求 -->
+                    <div class="quote-requirements">
+                        <h3>采购需求</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>采购数量：</label>
+                                <input type="text" name="quantity" placeholder="请输入采购数量和单位，如：1000块、50吨">
+                            </div>
+                            <div class="form-group">
+                                <label>预期交货时间：</label>
+                                <select name="delivery_time">
+                                    <option value="">请选择</option>
+                                    <option value="urgent">急需（7天内）</option>
+                                    <option value="normal">正常（15-30天）</option>
+                                    <option value="flexible">可协商</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>使用场景和特殊要求：</label>
+                            <textarea name="requirements" rows="4" placeholder="请详细描述产品的具体使用场景、技术要求、工作环境等。例如：用于钢铁厂高炉内衬，要求耐1600℃高温，抗铁水冲刷。支持任何语言输入。"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-primary" onclick="nextStep()">下一步</button>
+                        <button type="button" class="btn btn-outline" onclick="closeGetQuote()">取消</button>
+                    </div>
+                </div>
+
+                <!-- 第二步：联系信息 -->
+                <div class="form-step" data-step="2">
+                    <!-- 需求摘要 -->
+                    <div class="quote-summary">
+                        <h3>需求摘要</h3>
+                        <div class="summary-card">
+                            <div class="summary-item">
+                                <strong>产品：</strong><span id="summary-product">产品名称</span>
+                            </div>
+                            <div class="summary-item">
+                                <strong>数量：</strong><span id="summary-quantity">数量信息</span>
+                            </div>
+                            <div class="summary-item">
+                                <strong>交货时间：</strong><span id="summary-delivery">交货时间</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 联系信息 -->
+                    <div class="contact-info">
+                        <h3>联系信息</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>联系邮箱：<span style="color: red;">*</span></label>
+                                <input type="email" name="email" placeholder="请输入您的邮箱地址" required>
+                            </div>
+                            <div class="form-group">
+                                <label>联系电话：</label>
+                                <input type="tel" name="phone" placeholder="请输入您的电话号码">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>公司名称：</label>
+                                <input type="text" name="company" placeholder="请输入您的公司名称">
+                            </div>
+                            <div class="form-group">
+                                <label>所在地区：</label>
+                                <input type="text" name="location" placeholder="请输入您的所在地区或国家">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>所属行业：</label>
+                            <select name="industry">
+                                <option value="">请选择行业</option>
+                                <option value="steel">钢铁冶金</option>
+                                <option value="cement">水泥建材</option>
+                                <option value="glass">玻璃制造</option>
+                                <option value="petrochemical">石化工业</option>
+                                <option value="power">电力能源</option>
+                                <option value="ceramics">陶瓷工业</option>
+                                <option value="aluminum">有色金属</option>
+                                <option value="other">其他行业</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" onclick="prevStep()">上一步</button>
+                        <button type="submit" class="btn btn-primary btn-large">提交报价需求</button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- 成功消息 -->
+            <div id="get-quote-success" class="success-message" style="display: none;">
+                <div class="success-icon">✅</div>
+                <h3>报价需求提交成功！</h3>
+                <p>我们已收到您的详细报价需求，专业销售工程师将在12小时内为您提供完整的产品报价和技术方案。</p>
+                <div class="success-actions">
+                    <button type="button" class="btn btn-primary" onclick="closeGetQuote()">知道了</button>
+                    <button type="button" class="btn btn-outline" onclick="window.open('contact.html', '_blank')">联系客服</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
